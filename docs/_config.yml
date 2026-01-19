@@ -1,6 +1,15 @@
 title: IFT4055
 description: Projet Honor
+
 remote_theme: mmistakes/minimal-mistakes
+
 plugins:
   - jekyll-include-cache
+  
 markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single

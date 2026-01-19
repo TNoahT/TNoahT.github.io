@@ -1,3 +1,5 @@
-title: Description du projet
-
-# Description du projet
+---
+layout: single
+title: "Description du projet"
+permalink: /project/
+---

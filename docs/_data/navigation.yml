@@ -1,0 +1,5 @@
+main:
+  - title: "Accueil"
+    url: /
+  - title: "Description du projet"
+    url: /project/
