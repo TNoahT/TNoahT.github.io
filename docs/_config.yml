@@ -1,7 +1,7 @@
-title: IFT4055
+title: IFT4055 - Un corpus de métadonnées scientifiques
 description: Projet Honor
 
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: pages-themes/primer@v0.6.0
 
 plugins:
   - jekyll-include-cache
@@ -12,4 +12,4 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: single
+      layout: default
