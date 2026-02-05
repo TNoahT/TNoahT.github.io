@@ -6,7 +6,8 @@ classes: full-width
 ---
 <nav>
   <a href="{{ '/index.html' | relative_url }}">Accueil</a> |
-  <a href="{{ '/project/' | relative_url }}">Description du projet</a>
+  <a href="{{ '/project/' | relative_url }}">Description du projet</a> |
+  <a href="{{ '/update/' | relative_url }}">Rapport d'avancement</a>
 </nav>
 
 ## Contexte

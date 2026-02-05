@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Rapport d’avancement | IFT4055 - Un corpus de métadonnées scientifiques</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Rapport d’avancement" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Projet Honor" />
+<meta property="og:description" content="Projet Honor" />
+<link rel="canonical" href="http://localhost:4000/update/" />
+<meta property="og:url" content="http://localhost:4000/update/" />
+<meta property="og:site_name" content="IFT4055 - Un corpus de métadonnées scientifiques" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Rapport d’avancement" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Projet Honor","headline":"Rapport d’avancement","url":"http://localhost:4000/update/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=a7964968b37d6516a36092a192d6f2876f0f49b6">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">IFT4055 - Un corpus de métadonnées scientifiques</a></h1>
+      
+
+      <nav>
+  <a href="/index.html">Accueil</a> |
+  <a href="/project/">Description du projet</a> |
+  <a href="/update/">Rapport d'avancement</a>
+</nav>
+
+<h1 id="rapport-davancement">Rapport d’avancement</h1>
+
+<h2 id="5-février-2026---complétion-du-script-pour-lextraction-des-données">5 février 2026 - Complétion du script pour l’extraction des données</h2>
+<p>Les données de <a href="https://umontreal.scholaris.ca/home">Papyrus</a> sont disponibles
+selon deux approches principales:</p>
+<ul>
+  <li>La première exploite des liens dynamiques du moteur de recherche interne à 
+Papyrus. Par exemple : <code class="language-plaintext highlighter-rouge">https://umontreal.scholaris.ca/search?query="code+civil</code>.
+Cette méthodes permet de faire des recherches avancées et rapides dans la base
+de données, mais n’est pas idéale pour le moissonnage.</li>
+  <li>La seconde exploite le protocole Open Access Initiative - Protocol for 
+Metadata Harvesting (OAI-PMH). Ceci est conçu pour la récolte de métadonnée.</li>
+</ul>
+
+<p>Après un test rapide sur les thèses et mémoires du département de droit, 
+l’utilisation d’OAI-PMH ne donnait qu’environ $400$ résultats, alors que (la
+version en ligne de Papyrus)
+[https://umontreal.scholaris.ca/collections/4aa0be61-e42e-428a-a844-623d48b3fd4c/search]
+montre $1036$ documents correspondant.</p>
+
+<p>Devant ces résultats, nous avons décidé d’intérogger directement le site web 
+de Papyrus, d’en extraire les pages HTML correspondant aux thèses et mémoires,
+et de structurer les metadonnées pertinentes dans un fichier JSON.</p>
+
+<p>L’inconvénient avec cette stratégie est qu’il faut itérer sur tous les documents
+disponibles sur le site web, puis de déterminer s’il s’agit d’une thèse ou d’un 
+mémoire, et enfin d’extraire les métadonnées pertinentes. Les hyperliens des 
+documents ont cette forme: <code class="language-plaintext highlighter-rouge">https://papyrus.bib.umontreal.ca/xmlui/handle/1866/{index}?show=full</code>,
+où <code class="language-plaintext highlighter-rouge">{index}</code> est le numéro du document dans la base de données. L’algorithme utilisé pour 
+l’extraction des metadonnées itère donc au travers de tous les documents disponibles, 
+passant de l’index maximal au moment de la collecte, jusqu’à $0$. À notre 
+connaissance, il n’existe pas de manière explicite de trouver l’index maximal; nous
+utilisons donc une recherche manuelle approximative, suivie d’une heuristique afin
+d’avoir un index maximal approximé.</p>
+
+<p>Donc, jusqu’ici, le script pour extraire les données est complèt. Il suffit 
+maintenant de l’exécuter afind d’extraire toutes les données.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

@@ -5,7 +5,8 @@ title: IFT4055 H26 - Projet Honor
 
 <nav>
   <a href="{{ '/index.html' | relative_url }}">Accueil</a> |
-  <a href="{{ '/project/' | relative_url }}">Description du projet</a>
+  <a href="{{ '/project/' | relative_url }}">Description du projet</a> |
+  <a href="{{ '/update/' | relative_url }}">Rapport d'avancement</a>
 </nav>
 
 # Un corpus de métadonnées scientifiques
