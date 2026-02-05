@@ -23,10 +23,9 @@ de données, mais n'est pas idéale pour le moissonnage.
 Metadata Harvesting (OAI-PMH). Ceci est conçu pour la récolte de métadonnée. 
 
 Après un test rapide sur les thèses et mémoires du département de droit, 
-l'utilisation d'OAI-PMH ne donnait qu'environ $400$ résultats, alors que (la
-version en ligne de Papyrus)
-[https://umontreal.scholaris.ca/collections/4aa0be61-e42e-428a-a844-623d48b3fd4c/search]
-montre $1036$ documents correspondant.
+l'utilisation d'OAI-PMH ne donnait qu'environ 400 résultats, alors que 
+[la version en ligne de Papyrus](https://umontreal.scholaris.ca/collections/4aa0be61-e42e-428a-a844-623d48b3fd4c/search)
+montre 1,036 documents correspondant.
 
 Devant ces résultats, nous avons décidé d'intérogger directement le site web 
 de Papyrus, d'en extraire les pages HTML correspondant aux thèses et mémoires,
@@ -38,10 +37,10 @@ mémoire, et enfin d'extraire les métadonnées pertinentes. Les hyperliens des
 documents ont cette forme: `https://papyrus.bib.umontreal.ca/xmlui/handle/1866/{index}?show=full`,
 où `{index}` est le numéro du document dans la base de données. L'algorithme utilisé pour 
 l'extraction des metadonnées itère donc au travers de tous les documents disponibles, 
-passant de l'index maximal au moment de la collecte, jusqu'à $0$. À notre 
+passant de l'index maximal au moment de la collecte, jusqu'à 0. À notre 
 connaissance, il n'existe pas de manière explicite de trouver l'index maximal; nous
 utilisons donc une recherche manuelle approximative, suivie d'une heuristique afin
 d'avoir un index maximal approximé.
 
 Donc, jusqu'ici, le script pour extraire les données est complèt. Il suffit 
-maintenant de l'exécuter afind d'extraire toutes les données.
+maintenant de l'exécuter afin d'extraire toutes les données.
