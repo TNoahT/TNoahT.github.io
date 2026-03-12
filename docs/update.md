@@ -12,6 +12,26 @@ classes: full-width
 
 # Rapport d'avancement
 
+## 11 mars 2026 - Détection de langues
+Puisque les données extraites de Papyrus ne mentionnent pas la langue de
+certains champs textuel, nous devons effectuer de la détection de langues 
+afin de les identifier, rendant ce jeu de données utile à la traduction 
+automatique. Cette tâche consiste donc à annoter les titres, les résumés ainsi
+que les mots clés, avec leur langue correspondante.
+
+Pour les résumés, nous utilisons [langdetect](https://github.com/Mimino666/langdetect)
+(v1.0.9). Cet outil utilise un modèle probabiliste baysien pour classifier des
+chaînes de caractères. Malheureusement, pour de courtes chaînes, cet outil 
+semble avoir de [moins bonnes performances](https://github.com/Mimino666/langdetect/issues/110).
+Étant donné que les mots clés et les titres ne contiennent que peu de 
+charactères, nous utilisons [lingua-py](https://github.com/pemistahl/lingua-py) 
+(v2.2.0). Cet outil fut crée afin de pallier au manque d'outils de
+détection de la langue pour les chaînes de charactères relativement petites.
+De plus, cet outil priorise `None` lorsqu'il n'est pas certain de la langue.
+
+Avec ceci, nous poouvons commencer la visualisation des données.
+
+
 ## 28 février 2026 - Extraction des données
 Les données sont extraites. Étant donné quelques problèmes de réseaux, ceci a 
 pris plusieurs essais avant de fonctionner, ainsi que 13h d'extraction pour 

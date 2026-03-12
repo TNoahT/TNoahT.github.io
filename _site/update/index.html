@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"Projet Honor","headline":"Rapport d’avancement","url":"http://localhost:4000/update/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=07eec2b5e6cf73389c7bbdd614782a60f63d049a">
+    <link rel="stylesheet" href="/assets/css/style.css?v=002d0dc2d899a743b405501028d7e99b29018f42">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -49,11 +49,29 @@
 
 <h1 id="rapport-davancement">Rapport d’avancement</h1>
 
-<h2 id="11-mars-2026---détection-de-langues-et-visualisation-des-données">11 mars 2026 - Détection de langues et visualisation des données</h2>
+<h2 id="11-mars-2026---détection-de-langues">11 mars 2026 - Détection de langues</h2>
+<p>Puisque les données extraites de Papyrus ne mentionnent pas la langue de
+certains champs textuel, nous devons effectuer de la détection de langues 
+afin de les identifier, rendant ce jeu de données utile à la traduction 
+automatique. Cette tâche consiste donc à annoter les titres, les résumés ainsi
+que les mots clés, avec leur langue correspondante.</p>
+
+<p>Pour les résumés, nous utilisons <a href="https://github.com/Mimino666/langdetect">langdetect</a>
+(v1.0.9). Cet outil utilise un modèle probabiliste baysien pour classifier des
+chaînes de caractères. Malheureusement, pour de courtes chaînes, cet outil 
+semble avoir de <a href="https://github.com/Mimino666/langdetect/issues/110">moins bonnes performances</a>.
+Étant donné que les mots clés et les titres ne contiennent que peu de 
+charactères, nous utilisons <a href="https://github.com/pemistahl/lingua-py">lingua-py</a> 
+(v2.2.0). Cet outil fut crée afin de pallier au manque d’outils de
+détection de la langue pour les chaînes de charactères relativement petites.
+De plus, cet outil priorise <code class="language-plaintext highlighter-rouge">None</code> lorsqu’il n’est pas certain de la langue.</p>
+
+<p>Avec ceci, nous poouvons commencer la visualisation des données.</p>
 
 <h2 id="28-février-2026---extraction-des-données">28 février 2026 - Extraction des données</h2>
 <p>Les données sont extraites. Étant donné quelques problèmes de réseaux, ceci a 
-pris plusieurs essaie avant de fonctionner, ainsi que 13h d’extraction.</p>
+pris plusieurs essais avant de fonctionner, ainsi que 13h d’extraction pour 
+récupérer le jeu de données final.</p>
 
 <h2 id="5-février-2026---complétion-du-script-pour-lextraction-des-données">5 février 2026 - Complétion du script pour l’extraction des données</h2>
 <p>Les données de <a href="https://umontreal.scholaris.ca/home">Papyrus</a> sont disponibles
