@@ -12,6 +12,11 @@ classes: full-width
 
 # Rapport d'avancement
 
+## 28 février 2026 - Extraction des données
+Les données sont extraites. Étant donné quelques problèmes de réseaux, ceci a 
+pris plusieurs essais avant de fonctionner, ainsi que 13h d'extraction pour 
+récupérer le jeu de données final.
+
 ## 5 février 2026 - Complétion du script pour l'extraction des données
 Les données de [Papyrus](https://umontreal.scholaris.ca/home) sont disponibles
 selon deux approches principales:
