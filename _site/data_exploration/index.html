@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Exploration des données | IFT4055 - Un corpus de métadonnées scientifiques</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Exploration des données" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Projet Honor" />
+<meta property="og:description" content="Projet Honor" />
+<link rel="canonical" href="http://localhost:4000/data_exploration/" />
+<meta property="og:url" content="http://localhost:4000/data_exploration/" />
+<meta property="og:site_name" content="IFT4055 - Un corpus de métadonnées scientifiques" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Exploration des données" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Projet Honor","headline":"Exploration des données","url":"http://localhost:4000/data_exploration/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1afd5f7c20f8efb0529405bec3425d9f10950911">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">IFT4055 - Un corpus de métadonnées scientifiques</a></h1>
+      
+
+      <nav>
+  <a href="/index.html">Accueil</a> |
+  <a href="/project/">Description du projet</a> |
+  <a href="/update/">Rapport d'avancement</a>
+</nav>
+
+<h3 id="données-manquantes">Données manquantes</h3>
+<p>Le tableau suivant résume les éléments manquants pour chaque attribut extrait.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th>Nombre de champs manquants</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>author</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>advisor</td>
+      <td>238</td>
+    </tr>
+    <tr>
+      <td>accesionned</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>available</td>
+      <td>1192</td>
+    </tr>
+    <tr>
+      <td>issued</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>abstract</td>
+      <td>15980</td>
+    </tr>
+    <tr>
+      <td>orcid</td>
+      <td>31462</td>
+    </tr>
+    <tr>
+      <td>handle</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>doi</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>uri</td>
+      <td>33818</td>
+    </tr>
+    <tr>
+      <td>keyword</td>
+      <td>313</td>
+    </tr>
+    <tr>
+      <td>doc_type</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>doc_language</td>
+      <td>2024</td>
+    </tr>
+    <tr>
+      <td>discipline</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>degree_grantor</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>degree_level</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>degree_name</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Le dépôt systématique des mémoires et 
+thèses de l’Université de Montréal sur Papyrus commença en <a href="https://boite-outils.bib.umontreal.ca/trouver-evaluer/depot-institutionnel-papyrus">2009</a>.
+Les documents précédent cette année sont ajoutés manuellement par l’équipe de Papyrus; 
+les documents imprimés doivent être numérisés.</p>
+
+<h3 id="exploration-des-données">Exploration des données</h3>
+
+<h4 id="title"><code class="language-plaintext highlighter-rouge">title</code></h4>
+<p>Le champs <code class="language-plaintext highlighter-rouge">title</code> contient le titre du document. La langue de cet attribut 
+fut annotée grâce à lingua-py. Tous les documents ont un et un seul 
+titre.</p>
+
+<p>La figure suivante montre la distribution des langues des titres.</p>
+
+<p align="center">
+  <img src="/assets/images/title_lang.png" style="width:60%;" />
+</p>
+
+<p>Nous voyons que la grande majorité des titres sont en français.</p>
+
+<p>La figure
+suivante montre la distribution des 10 disciplines les plus fréquentes dans
+toutes les données selon la langue des titres. Nous voyons, par exemple, que l’antropologie publie dans beaucoup de langues.</p>
+
+<p align="center">
+  <img src="/assets/images/disc_title_lang.png" style="width:60%;" />
+</p>
+
+<h4 id="author"><code class="language-plaintext highlighter-rouge">author</code></h4>
+<p>Tous les documents ont au moins un auteur d’associé. En fait, un seul document contient 
+plus d’un auteur: <a href="https://hdl.handle.net/1866/42292">La résistance des Montagnais à l’usurpation des rivières à saumon par les euro-canadiens du XVIIe au XXe siècle, par Anne-Marie Panasuk et Jean-René Proulx (1981)</a>.</p>
+
+<p>Le tableau suivant montre les 10 noms d’auteurs ayant le plus de publications, et les 
+disciplines associées. Un même nom peut correspondre à plusieurs personnes différentes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Auteur</th>
+      <th style="text-align: right">Publications</th>
+      <th style="text-align: left">Disciplines</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Gagnon, François</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">Criminologie, Histoire, Microbiologie et immunologie, Sciences de la communication, Sciences économiques</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Cloutier, Geneviève</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">Littérature, Littérature comparée, Relations industrielles, Service social, Urbanisme</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Martin, Isabelle</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Anthropologie, Droit, Psychologie, Théologie pratique</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Bélanger, Mathieu</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Philosophie, Science politique, Sciences vétérinaires, Urbanisme</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Côté, Catherine</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Criminologie, Psychologie, Science politique, Sciences biomédicales</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Gauthier, Nicolas</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Biochimie, Littératures de langue française, Physique, Études françaises</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Roy, Mathieu</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Anthropologie, Géographie, Psychologie, Santé publique</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Roy, Julie</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Criminologie, Nutrition, Sciences biomédicales, Sciences pharmaceutiques, Études cinématographiques</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Tremblay, Annie</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Biologie moléculaire, Criminologie, Science politique, Sciences pharmaceutiques</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Bergeron, Luc</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: left">Administration de l’éducation, Sciences pharmaceutiques, Sciences vétérinaires, Théologie</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="advisor"><code class="language-plaintext highlighter-rouge">advisor</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">advisor</code> nomme les directions de recherche pour une 
+publication donnée.</p>
+
+<p>La Figure suivante montre la distribution des 238 documents sans direction de recherche.</p>
+
+<p align="center">
+  <img src="/assets/images/missing_advisor_year.png" style="width:60%;" />
+</p>
+
+<p>Les documents sans direction de recherche se trouvent principalement avant 
+2009, avec une occurrence en 2010, et une autre en 2019.</p>
+
+<p>La figure suivante montre la distribution du nombre de direction de 
+recherche par document. Nous voyons que, bien que 1 ou 2 directions de 
+recherche sont les plus populaires, il existe plusieurs documents avec 3 directions ou plus.</p>
+<p align="center">
+  <img src="/assets/images/distrib_advisors.png" style="width:60%;" />
+</p>
+
+<p>En allant plus loin, la Figure suivante montre la distribution 
+disciplines ayant des publications avec 3 ou plus directions de 
+recherche. Nous voyons que ce sont les sciences vétérinaires qui 
+possèdent le plus de publications avec 3 ou plus directions de recherche,
+mais que ce phénomène est aussi présent dans plusieurs départements.</p>
+<p align="center">
+  <img src="/assets/images/disci_direct.png" style="width:80%;" />
+</p>
+
+<p>Il est intéressant de mentionner que le <a href="https://diro.umontreal.ca/programmes-cours/cycles-superieurs/maitrise-en-informatique/formulaires-pour-la-maitrise/">formulaire du DIRO</a> 
+pour la désignation d’un directeur et co-directeur de recherche ne 
+permet qu’un directeur et un co-directeur; ce formulaire est le même 
+depuis 2022. Or, nous voyons avec la Figure suivante que le DIRO accepta
+quelques publications avec trois ou plus directeurs de recherche depuis 
+2022, bien que cela soit rare. Nous voyons aussi que ce phénomène existe 
+depuis plusieurs années.</p>
+
+<p align="center">
+  <img src="/assets/images/info_advisors.png" style="width:60%;" />
+</p>
+
+<h4 id="accesionned"><code class="language-plaintext highlighter-rouge">accesionned</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">accesionned</code> montre la date de soumission du document dans la base
+de données de Papyrus, Scholaris; tous les documents ont donc nécessairement une valeur
+dans ce champs.</p>
+
+<p align="center">
+  <img src="/assets/images/access_per_year.png" style="width:60%;" />
+</p>
+
+<p>Nous voyons que la quantité de documents soumis sur Papyrus augmenta 
+nettement après 2009, lorsque le dépôt systématique des thèses et mémoires 
+sur cette plateforme fut instaurée.</p>
+
+<h4 id="available"><code class="language-plaintext highlighter-rouge">available</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">available</code> indique la data à laquelle le document devient 
+disponible publiquement. Une date manquante signifie simplement que le 
+document n’était pas encore publique au moment de l’extraction des données.</p>
+
+<p align="center">
+  <img src="/assets/images/avaialble_per_year.png" style="width:60%;" />
+</p>
+
+<h4 id="issued"><code class="language-plaintext highlighter-rouge">issued</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">issued</code> spécifie la date de publication officielle, correspondant à<br />
+la date de dépôt final du mémoire ou de la thèse.</p>
+
+<p align="center">
+  <img src="/assets/images/nb_doc_per_year.png" style="width:60%;" />
+</p>
+
+<p>Avec le graphique précédant, nous voyons que le nombre de publications explosa au milieu 
+des années 1980. Cependant, il est intéressant de noter que ce nombre reste plutôt
+stable depuis les 20 dernières années.</p>
+
+<h4 id="abstract"><code class="language-plaintext highlighter-rouge">abstract</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">abstract</code> donne le ou les résumés fournis dans les métadonnées
+du document. Nous utilisons langdetect afin d’annoter la langue des résumés, 
+puisque cette information n’est pas disponible directement avec les données
+de Papyrus.</p>
+
+<h5 id="données-manquantes-1">Données manquantes</h5>
+<p>La Figure suivant montre la distribution des 15,980 documents sans résumé.</p>
+
+<p align="center">
+  <img src="/assets/images/missing_abstracts_year.png" style="width:60%;" />
+</p>
+
+<p>Les champs <code class="language-plaintext highlighter-rouge">absract</code> manquants se retrouvent tous avant 2009, 
+inclusivement.</p>
+
+<h5 id="résumés-multiples">Résumés multiples</h5>
+<p>Les Figures suivantes montrent, à gauche, la distribution des documents avec
+plusieurs résumés au travers des années et, à droite, la distribution du nombre
+de résumés par document. Nous voyons que la montée en importance d’avoir plusieurs
+résumés correspond à la monté en popularité du Web et de l’interconnectivité. 
+Nous voyons aussi que la très grande majorité des publications ont exactement
+deux résumés, mais certains peuvent en avoir jusqu’à six.</p>
+<p align="center">
+  <img src="/assets/images/abs_year.png" style="width:48%;" />
+  <img src="/assets/images/nb_abs.png" style="width:48%;" />
+</p>
+
+<p>La Figure suivante montre la distribution des langues utilisées dans les résumés.
+Nous voyons que ce sont le français et l’anglais qui sont utilisés en très grande
+majorité.</p>
+<p align="center">
+  <img src="/assets/images/distrib_langue_abstract.png" style="width:60%;" />
+</p>
+
+<p>La Figure suivante montre les combinaisons de langues les plus populaires pour les résumés.
+Nous voyons que la combinaison (anglais, français) est la plus populaire. Nous remarquons
+aussi les 15 combinaisons (anglais, anglais) et les 7 (français, français).</p>
+<p align="center">
+  <img src="/assets/images/combi_lang_abs.png" style="width:85%;" />
+</p>
+
+<p>La Table suivante montre les résumés des documents ayant des combinaisons de langues (anglais, 
+anglais), ainsi que la similarité entre les deux résumés (utilisant l’algorithme de Gestalt grâce à
+la librairie <a href="https://docs.python.org/3/library/difflib.html">difflib.SequenceMatcher</a>). Nous 
+remarquons que les résumés sont presque toujours identiques, sauf à une occasion, où l’auteur insèra 
+deux résumés différents (mais relativement similaires) en anglais.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">doc_id</th>
+      <th style="text-align: right">issued_year</th>
+      <th style="text-align: left">abstract_1</th>
+      <th style="text-align: left">abstract_2</th>
+      <th style="text-align: right">similarity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">2481</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">Preserving and restoring peopl…</td>
+      <td style="text-align: left">Preserving and restoring peopl…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2483</td>
+      <td style="text-align: right">2024</td>
+      <td style="text-align: left">This study addresses the criti…</td>
+      <td style="text-align: left">This study addresses the criti…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2518</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">The market for private seniors…</td>
+      <td style="text-align: left">The market for private seniors…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2521</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">Vascular dysfunction and patho…</td>
+      <td style="text-align: left">Vascular dysfunction and patho…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2523</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">Introduction: Aging is the mai…</td>
+      <td style="text-align: left">Introduction: Aging is the mai…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2525</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">CEGEP teachers are one of a ki…</td>
+      <td style="text-align: left">CEGEP teachers are one of a ki…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2529</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">Despite the success of cancer …</td>
+      <td style="text-align: left">Despite the success of cancer …</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2595</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">Acute hypoxemic respiratory fa…</td>
+      <td style="text-align: left">Acute hypoxemic respiratory fa…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2598</td>
+      <td style="text-align: right">2024</td>
+      <td style="text-align: left">In eukaryotes, chromosomes are…</td>
+      <td style="text-align: left">In eukaryotes, chromosomes are…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2600</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">This study is based on Sébasti…</td>
+      <td style="text-align: left">This study is based on Sébasti…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2601</td>
+      <td style="text-align: right">2024</td>
+      <td style="text-align: left">Studies have shown that swimmi…</td>
+      <td style="text-align: left">Studies have shown that swimmi…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2603</td>
+      <td style="text-align: right">2024</td>
+      <td style="text-align: left">For over a decade now, cell ph…</td>
+      <td style="text-align: left">For over a decade now, cell ph…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2604</td>
+      <td style="text-align: right">2025</td>
+      <td style="text-align: left">The diverse shapes and archite…</td>
+      <td style="text-align: left">The diverse shapes and archite…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2929</td>
+      <td style="text-align: right">2024</td>
+      <td style="text-align: left">As machine learning models gro…</td>
+      <td style="text-align: left">As machine learning models con…</td>
+      <td style="text-align: right">0.79</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">14830</td>
+      <td style="text-align: right">2021</td>
+      <td style="text-align: left">Introduction: The adequate man…</td>
+      <td style="text-align: left">Introduction: The adequate man…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>La Table suivante montre les résumés utilisant la combinaison (français, français). Encore une fois,
+ces résumés sont très similaires. Pour 9364, la différence entre les deux résumés se résume à la 
+présence de caractères d’échappements “\r\n” dans le second résumé, non présents dans le premier.
+Pour 30365, les deux résumés présentent de plus grande différences. Dans ce cas, la différence 
+pourrait être causée à la numérisation du document; étant donné que cette thèse fut déposée en 1998
+en format papier. Dans les autres cas, les erreurs peuvent être attribuées aux utilisateurs ajoutant
+les documents dans la base de données de Papyrus.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">doc_id</th>
+      <th style="text-align: right">issued_year</th>
+      <th style="text-align: left">abstract_1</th>
+      <th style="text-align: left">abstract_2</th>
+      <th style="text-align: right">similarity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">9364</td>
+      <td style="text-align: right">2024</td>
+      <td style="text-align: left">Ce projet de recherche consist…</td>
+      <td style="text-align: left">Ce projet de recherche consist…</td>
+      <td style="text-align: right">0.987</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">9486</td>
+      <td style="text-align: right">2023</td>
+      <td style="text-align: left">Ce mémoire étudie le problème …</td>
+      <td style="text-align: left">Ce mémoire étudie le problème …</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">16366</td>
+      <td style="text-align: right">2020</td>
+      <td style="text-align: left">Les ravins de thermo-érosion c…</td>
+      <td style="text-align: left">Les ravins de thermo-érosion c…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">26776</td>
+      <td style="text-align: right">2013</td>
+      <td style="text-align: left">L’acidose lactique du Saguenay…</td>
+      <td style="text-align: left">L’acidose lactique du Saguenay…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">27400</td>
+      <td style="text-align: right">2013</td>
+      <td style="text-align: left">Cette thèse cible l’étude d’un…</td>
+      <td style="text-align: left">Cette thèse cible l’étude d’un…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">30365</td>
+      <td style="text-align: right">1998</td>
+      <td style="text-align: left">Malgré la diversité grandissan…</td>
+      <td style="text-align: left">Malgré la diversité grandissan…</td>
+      <td style="text-align: right">0.701</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">33634</td>
+      <td style="text-align: right">2002</td>
+      <td style="text-align: left">Ce mémoire s’intéresse à l’eff…</td>
+      <td style="text-align: left">Ce mémoire s’intéresse à l’eff…</td>
+      <td style="text-align: right">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="exploration-du-découpage-des-résumés">Exploration du découpage des résumés</h5>
+<p>Ce jeu de données assume que les utilisateurs déposant le document dans la 
+base de données de Papyrus inscrivent les résumés multiples dans des champs 
+différents. Cette section vise à vérifier s’il y a des erreurs quant au 
+découpage de résumés, où des résumés différents seraient ajoutés dans le même 
+champs. La Figure suivant montre la distribution du nombre de mots dans les 
+résumés en anglais et en français.</p>
+<p align="center">
+  <img src="/assets/images/avg_len_abs.png" style="width:60%;" />
+</p>
+
+<p>La moyenne du nombre de mots pour les résumés en anglais est de 315.1 mots, et, en français, de 357.4 mots. La différence entre la moyenne anglaise et la moyenne française correspond à une augmentation
+de 13.41% pour le français, ce qui est attendu dans des textes parallèles entre ces deux langues.</p>
+
+<p>Pour détecter ceci, s’il y a des erreurs dans le découpage des résumés par 
+les utilisateurs, nous 
+utilisons une heuristique simple. Nous découpons tous les résumés en tiers.
+Ensuite, nous utilisons OpenLID-v2 indépendamment sur chaque tier afin de 
+déterminer leur langue. Enfin, nous comparons la langue du résumé entier 
+et les langues des tiers. Les exemples contenant au moins une différence 
+sont vérifiés manuellement. La majorité du temps, les différences sont
+causées par la citation du titre d’une oeuvre dans une langue différente que 
+celle du résumé.</p>
+
+<p>Par contre, d’autres différences sont belles et bien des erreurs d’utilisateurs.</p>
+<ul>
+  <li><a href="http://hdl.handle.net/1866/22256">Ce document</a> a entré deux fois le résumé 
+anglais; une fois seul, et une fois avec le résumé français.</li>
+  <li><a href="http://hdl.handle.net/1866/10648">Ce document</a> a mis les mot-clés dans un 
+champs <code class="language-plaintext highlighter-rouge">abstract</code>.</li>
+</ul>
+
+<p>35 résumés n’ont pas de langue annotée. Dans ces 35 résumés, seulement cinq 
+ont une différence dans le <em>test des tiers</em>. L’absence de ces annotations 
+de langue sont causés soit par un taux de confiance trop bas de la part de
+OpenLID-v2.</p>
+
+<ul>
+  <li>TODO: vérifier les abstract très long</li>
+</ul>
+
+<h4 id="orcid"><code class="language-plaintext highlighter-rouge">orcid</code></h4>
+<p>ORCID, organisisme créé en 2012, permet de donner un identifiant à une
+personne faisant de la recherche. Dans les données extraites, 31,462 
+documents n’ont pas d’ORCID associé; 2,418 en ont un, principalement à 
+partir de 2016, la Figure suivante montre ce phénomène.</p>
+<p align="center">
+  <img src="/assets/images/orcid_per_year.png" style="width:60%;" />
+</p>
+
+<p>La Figure suivante montre les 20 disciplines où les identifiants 
+ORCID sont le plus utilisés. Nous voyons que, bien que les sciences 
+biomédicales possèdent le plus grand nombre d’ORCID, cet identifiant est
+utilisé dans beaucoup de disciplines, autant en sciences humaines qu’en 
+sciences pures.</p>
+
+<p align="center">
+  <img src="/assets/images/disciplines_orcid.png" style="width:60%;" />
+</p>
+
+<h4 id="handle"><code class="language-plaintext highlighter-rouge">handle</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">handle</code> correspond au lien Scholaris, la base de données de
+Papyrus. Tous les documents ont donc nécessairement en élément dans 
+ce champs.</p>
+
+<h4 id="doi"><code class="language-plaintext highlighter-rouge">doi</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">doi</code> correspond au <em>Digital Object Identifier</em> de ce 
+document. Seulement 10 documents n’ont pas de DOI; voici leur 
+répartition selon les années:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Missing DOIs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1985</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1987</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1989</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1992</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1994</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1999</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2000</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Voici la distribution des DOIs manquants selon la discipline:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discipline</th>
+      <th>Missing DOIs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Criminologie</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Psychologie clinique</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences de l’activité physique</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences de l’information</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Théologie</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="uri"><code class="language-plaintext highlighter-rouge">uri</code></h4>
+<p>Le champs URI est un champs optionnel pour les publications de thèses et 
+mémoires. 33,818 documents n’ont pas d’URI; 62 en ont. Ils sont
+utilisés pour ajouter des documents externes reliés à une publication.</p>
+
+<p>La Figure suivante montre la distribution de l’utilisation des URIs
+par année. Cet attribut était plus populaire avant 2006.</p>
+<p align="center">
+  <img src="/assets/images/uri_per_year.png" style="width:60%;" />
+</p>
+
+<p>Afin d’explorer cette coupure, la Figure suivante montre la 
+répartition des disciplines utilisant des URIs avant 2006. Cette
+distribution est bien répartie entre plusieurs disciplines différentes.</p>
+<p align="center">
+  <img src="/assets/images/disciplines_uri_b4_2006.png" style="width:60%;" />
+</p>
+
+<p>Nous pouvons comparer ces résultats avec les disciplines utilisant
+des URIs après 2006 :</p>
+<p align="center">
+  <img src="/assets/images/disciplines_uri_after_2006.png" style="width:60%;" />
+</p>
+<p>Après 2006, seulement le département de musique utilise encore
+des URIs. Nous pourrions expliquer ceci avec la montée du web. Par 
+exemple, Git fut crée en 2006. C’est aussi en <a href="https://www.iso.org/standard/51502.html">2008</a> que le format PDF devint le standard pour la publication de documents, permettant de facilement joindre et suivre
+un lien à même un document. Ceci pourrait expliquer la diminution de 
+l’utilisation des URIs dans les publications universitaires.</p>
+
+<p>Une grande proportion des liens URI testés manuellement ne 
+sont plus disponible.</p>
+
+<h4 id="keyword"><code class="language-plaintext highlighter-rouge">keyword</code></h4>
+<p>La Figure suivante montre la distribution des 313 documents sans mots-clés au 
+fil des années.</p>
+
+<p align="center">
+  <img src="/assets/images/missing_kw_year.png" style="width:60%;" />
+</p>
+
+<p>Les documents sans mots-clés furent donc publiés entre 1971 et 2009 inclusivement, précédant le dépôt systématique dans Papyrus.</p>
+
+<p>La Figure suivante présente le nombre moyen de mots-clés par document selon les années.
+Depuis 2008, le nombre moyen de mots-clés tourne autour de 13 par document.</p>
+
+<p align="center">
+  <img src="/assets/images/moy_kw_year.png" style="width:60%;" />
+</p>
+
+<p>Nous pouvons aussi visualiser la distribution du nombre de mots-clés par 
+document.</p>
+
+<p align="center">
+  <img src="/assets/images/distrib_kw.png" style="width:60%;" />
+</p>
+
+<p>Le <a href="http://hdl.handle.net/1866/25398">document</a> contenant 119 mots-clés 
+provient de 2020;
+les mots-clés furent donc entrés par l’auteur. La même chose est vraie pour 
+le <a href="http://hdl.handle.net/1866/22570">document</a> avec 71 mots-clés provenant 
+de 2014. Le <a href="http://hdl.handle.net/1866/4362">document</a> avec 79 mots-clés 
+provient quant à lui de 2007.</p>
+
+<p>Les mots-clés présents dans le PDF de la publications ne sont pas toujours 
+les mêmes que ceux disponibles dans les métadonnées; certains auteurs 
+semblent en ajouter lors du dépôt dans Papyrus.</p>
+
+<p align="center">
+  <img src="/assets/images/no_kw_year.png" style="width:60%;" />
+</p>
+
+<p>Nous voyons avec la Figure précédente que tous les documents n’ayant pas de 
+mots-clés dans 
+les métadonnées proviennent de 2009 ou avant. Nous avons échantillonés 
+aléatoirement
+5 publications sans mots-clés (<a href="http://hdl.handle.net/1866/1294">1984</a>, 
+<a href="http://hdl.handle.net/1866/1574">1991</a>, <a href="http://hdl.handle.net/1866/1585">1993</a>, 
+<a href="http://hdl.handle.net/1866/7825">2003</a> et <a href="http://hdl.handle.net/1866/8197">2007</a>), 
+et aucun de ces documents ne possède de mots-clés dans le PDF de la 
+publication.</p>
+
+<h4 id="doc_language"><code class="language-plaintext highlighter-rouge">doc_language</code></h4>
+<p>La Figure suivante montre la distribution des 2,024 champs manquants de 
+l’attribut<code class="language-plaintext highlighter-rouge">doc_language</code> selon les années.</p>
+
+<p align="center">
+  <img src="/assets/images/missing_doc_lang_year.png" style="width:60%;" />
+</p>
+
+<p>Nous voyons que ces champs manquant proviennent exclusivement de publications
+soumisses avant 2009, soit avant la date de dépôt systématique dans Papyrus.</p>
+
+<p align="center">
+  <img src="/assets/images/doc_lang.png" style="width:60%;" />
+</p>
+
+<p>La grande majorité des documents sont écrits en français. 4,677 documents
+sont écrits en anglais, 23 en espgnol. Enfin, quelques documents
+sont en allemand, en italien, en portuguais, en russe ou en grec.</p>
+
+<p>À l’aide de la Figure suivante, nous pouvons voir que le phénomène de la 
+publications en d’autres langues que le français ou l’anglais est bien
+réparti au travers des années.</p>
+<p align="center">
+  <img src="/assets/images/doc_lang_not_fr_en.png" style="width:60%;" />
+</p>
+
+<p>Avec la Figure suivante, nous voyons que la quantité de publications en
+anglais ne fait qu’augmenter au fil des années.</p>
+<p align="center">
+  <img src="/assets/images/eng_doc.png" style="width:60%;" />
+</p>
+
+<h4 id="doc_type-discipline-degree_grantor-et-degree_name"><code class="language-plaintext highlighter-rouge">doc_type</code>, <code class="language-plaintext highlighter-rouge">discipline</code>, <code class="language-plaintext highlighter-rouge">degree_grantor</code> et <code class="language-plaintext highlighter-rouge">degree_name</code></h4>
+<p>L’attribut <code class="language-plaintext highlighter-rouge">doc_type</code></p>
+
+<p>Le tableau suivant montre la distibution de ces attributs manquants selon les années.
+Les éléments <code class="language-plaintext highlighter-rouge">discipline</code> et <code class="language-plaintext highlighter-rouge">degree_name</code> manquants proviennent de deux documents; 
+le premier en 1985, le second en 1994. Les champs manquants durant les années 2010 et 2025
+peuvent être attribués à des erreurs commises par les auteurs, puisque ces publications furent
+soumises après 2009.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>issued_year</th>
+      <th>doc_type</th>
+      <th>discipline</th>
+      <th>degree_grantor</th>
+      <th>degree_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1985</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1994</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
