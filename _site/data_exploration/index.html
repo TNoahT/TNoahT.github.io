@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"Projet Honor","headline":"Exploration des données","url":"http://localhost:4000/data_exploration/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=1afd5f7c20f8efb0529405bec3425d9f10950911">
+    <link rel="stylesheet" href="/assets/css/style.css?v=3bf0e34b94948a2abbc0692ea0ed12a845a84436">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -778,6 +778,108 @@ aléatoirement
 et aucun de ces documents ne possède de mots-clés dans le PDF de la 
 publication.</p>
 
+<p>La Table suivante montre les 20 mots-clés les plus utilisés:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Mot-clé</th>
+      <th style="text-align: right">Nombre d’occurences</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Psychologie</td>
+      <td style="text-align: right">575</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Québec</td>
+      <td style="text-align: right">533</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Anthropologie</td>
+      <td style="text-align: right">451</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Canada</td>
+      <td style="text-align: right">375</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Philosophie</td>
+      <td style="text-align: right">370</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Histoire</td>
+      <td style="text-align: right">350</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Informatique</td>
+      <td style="text-align: right">280</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Chimie</td>
+      <td style="text-align: right">262</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Sociologie</td>
+      <td style="text-align: right">248</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Identité</td>
+      <td style="text-align: right">235</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">France</td>
+      <td style="text-align: right">229</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Droit</td>
+      <td style="text-align: right">227</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Philosophy</td>
+      <td style="text-align: right">218</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Physique</td>
+      <td style="text-align: right">214</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Sciences biomédicales</td>
+      <td style="text-align: right">214</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Montréal</td>
+      <td style="text-align: right">212</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Inflammation</td>
+      <td style="text-align: right">207</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Quebec</td>
+      <td style="text-align: right">204</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Science politique</td>
+      <td style="text-align: right">202</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Sciences infirmières</td>
+      <td style="text-align: right">199</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Dans ce tableau, nous pouvons noter que <code class="language-plaintext highlighter-rouge">Québec</code> et <code class="language-plaintext highlighter-rouge">Quebec</code> sont présent; on 
+peut associer le second à l’anglais ou à une faute de frappe.
+Nous voyons aussi que, parmis les 20 mots-clés les plus populaires se trouvent 
+des mot-clés décrivant les disciplines les plus populaires. Il y a donc une grande 
+tendance à inscrire le nom de la discipline de publication dans les mots-clés.
+Il y a un total de 155,489 mots-clés différents utilisés au travers de Papyrus.</p>
+
+<p>Au total, 120,936 mots-clés ne sont présents qu’une seule fois.</p>
+
 <h4 id="doc_language"><code class="language-plaintext highlighter-rouge">doc_language</code></h4>
 <p>La Figure suivante montre la distribution des 2,024 champs manquants de 
 l’attribut<code class="language-plaintext highlighter-rouge">doc_language</code> selon les années.</p>
@@ -811,7 +913,6 @@ anglais ne fait qu’augmenter au fil des années.</p>
 </p>
 
 <h4 id="doc_type-discipline-degree_grantor-et-degree_name"><code class="language-plaintext highlighter-rouge">doc_type</code>, <code class="language-plaintext highlighter-rouge">discipline</code>, <code class="language-plaintext highlighter-rouge">degree_grantor</code> et <code class="language-plaintext highlighter-rouge">degree_name</code></h4>
-<p>L’attribut <code class="language-plaintext highlighter-rouge">doc_type</code></p>
 
 <p>Le tableau suivant montre la distibution de ces attributs manquants selon les années.
 Les éléments <code class="language-plaintext highlighter-rouge">discipline</code> et <code class="language-plaintext highlighter-rouge">degree_name</code> manquants proviennent de deux documents; 
@@ -860,6 +961,367 @@ soumises après 2009.</p>
     </tr>
   </tbody>
 </table>
+
+<p>Le tableau suivant montre la distribution des 20 disciplines les plus 
+populaires au travers du corpus:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discipline</th>
+      <th>Nombre d’occurrences</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sciences biomédicales</td>
+      <td>1816</td>
+    </tr>
+    <tr>
+      <td>Informatique</td>
+      <td>1593</td>
+    </tr>
+    <tr>
+      <td>Psychologie</td>
+      <td>1450</td>
+    </tr>
+    <tr>
+      <td>Chimie</td>
+      <td>1110</td>
+    </tr>
+    <tr>
+      <td>Anthropologie</td>
+      <td>1088</td>
+    </tr>
+    <tr>
+      <td>Philosophie</td>
+      <td>968</td>
+    </tr>
+    <tr>
+      <td>Physique</td>
+      <td>950</td>
+    </tr>
+    <tr>
+      <td>Histoire</td>
+      <td>947</td>
+    </tr>
+    <tr>
+      <td>Criminologie</td>
+      <td>831</td>
+    </tr>
+    <tr>
+      <td>Sociologie</td>
+      <td>795</td>
+    </tr>
+    <tr>
+      <td>Science politique</td>
+      <td>788</td>
+    </tr>
+    <tr>
+      <td>Sciences biologiques</td>
+      <td>735</td>
+    </tr>
+    <tr>
+      <td>Biologie moléculaire</td>
+      <td>726</td>
+    </tr>
+    <tr>
+      <td>Droit</td>
+      <td>701</td>
+    </tr>
+    <tr>
+      <td>Biochimie</td>
+      <td>694</td>
+    </tr>
+    <tr>
+      <td>Sciences vétérinaires</td>
+      <td>684</td>
+    </tr>
+    <tr>
+      <td>Microbiologie et immunologie</td>
+      <td>676</td>
+    </tr>
+    <tr>
+      <td>Sciences infirmières</td>
+      <td>675</td>
+    </tr>
+    <tr>
+      <td>Littératures de langue française</td>
+      <td>644</td>
+    </tr>
+    <tr>
+      <td>Relations industrielles</td>
+      <td>555</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ce sont les sciences biomédicales qui dominent, suivies de l’informatique et de la psychologie.
+Il y a un total de 174 disciplines dans le corpus complet. Le tableau suivant montre
+les 20 disciplines les moins publiées:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discipline</th>
+      <th>Nombre d’occurrences</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chimie médicinale</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Médecine sociale et préventive</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Activité physique</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences biomédicales (Nutrition)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Médecine et chirurgie expérimentales</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Pathologie</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences de l’éducation (Andragogie)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Aménagement (Histoire et théories)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences vétérinaires (option sciences cliniques)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences de la vision (Option sciences fondamentales et appliquées)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Études néo-helléniques</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Psychologie-recherche et intervention (Psychologie du travail et des organisations)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences pharmaceutiques (Chimie médicinale)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences biomédicales (Bioéthique)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences de l’éducation (Éducation comparée et fondements de l’éducation)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences humaines appliquées (Option bioéthique)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Psychologie-recherche et intervention (Psychodynamique)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Sciences biomédicales (Immunologie)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Médecine du travail et d’hygiène du milieu</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Littérature (Humanités numériques)</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Parmis les 33,879 documents du corpus, 33,876 sont des thèses ou mémoires,
+2 sont des travaux étudiants de niveau maitrîse ou doctorat, 1 est un film
+ou vidéo de niveau maitrise. Le document manquant ne possède par de valeur 
+dans ce champs.</p>
+
+<p>Le tableau suivant montre la distribution des types non vides de diplôme octroyés :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Diplôme</th>
+      <th>Nombre d’occurrences</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>M. Sc.</td>
+      <td>15850</td>
+    </tr>
+    <tr>
+      <td>Ph. D.</td>
+      <td>10430</td>
+    </tr>
+    <tr>
+      <td>M.A.</td>
+      <td>5435</td>
+    </tr>
+    <tr>
+      <td>LL. M.</td>
+      <td>806</td>
+    </tr>
+    <tr>
+      <td>M. Sc. A.</td>
+      <td>265</td>
+    </tr>
+    <tr>
+      <td>M. Ps.</td>
+      <td>253</td>
+    </tr>
+    <tr>
+      <td>LL. D.</td>
+      <td>202</td>
+    </tr>
+    <tr>
+      <td>M.O.A.</td>
+      <td>183</td>
+    </tr>
+    <tr>
+      <td>M. Mus.</td>
+      <td>146</td>
+    </tr>
+    <tr>
+      <td>M. Urb.</td>
+      <td>133</td>
+    </tr>
+    <tr>
+      <td>D. Mus.</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <td>M.S.I.</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>D. Ps.</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>L. Th.</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>M.B.S.I.</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>D. Th. &amp; Ph. D.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>D. Th.</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>D. Psy.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>M. Th.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>M. Sc</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Ll. M.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>M. Trad.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>M.A.P.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>M. Ps</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>M.S.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>M.A</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ces dipômes se résument dans ces deux niveaux universitaires:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Niveau universitaire</th>
+      <th>Nombre d’occurrences</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maîtrise / Master’s</td>
+      <td>23136</td>
+    </tr>
+    <tr>
+      <td>Doctorat / Doctoral</td>
+      <td>10744</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>On retrouve donc deux fois plus de documents liés à des maîtrises qu’à des doctorats.</p>
+
+<p>Le tableau suivant résume la distribution des valeurs non vides de l’attribut
+<code class="language-plaintext highlighter-rouge">degree_grantor</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Émetteur du diplôme</th>
+      <th>Nombre d’occurences</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Université de Montréal</td>
+      <td>33870</td>
+    </tr>
+    <tr>
+      <td>M.S. U. of California, Davis</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Le diplôme émit par UC Davis provient d’un 
+<a href="https://umontreal.scholaris.ca/items/f1238b56-ff73-4f10-aaa1-76fef83dbcd2">mémoire de maîtrise en nutrition</a>
+publié en 1985 par une étudiante de l’UdeM déposant un mémoire à l’Université 
+Davis de Californie.</p>
 
 
       

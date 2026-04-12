@@ -420,6 +420,42 @@ aléatoirement
 et aucun de ces documents ne possède de mots-clés dans le PDF de la 
 publication.
 
+La Table suivante montre les 20 mots-clés les plus utilisés:
+
+| Mot-clé | Nombre d'occurences |
+|:--------|--------------------:|
+|Psychologie| 575|
+|Québec| 533|
+|Anthropologie| 451|
+|Canada| 375|
+|Philosophie| 370|
+|Histoire| 350|
+|Informatique| 280|
+|Chimie| 262|
+|Sociologie| 248|
+|Identité| 235|
+|France| 229|
+|Droit| 227|
+|Philosophy| 218|
+|Physique| 214|
+|Sciences biomédicales| 214|
+|Montréal| 212|
+|Inflammation| 207|
+|Quebec| 204|
+|Science politique| 202|
+|Sciences infirmières| 199|
+|:--------|--------------------:|
+
+Dans ce tableau, nous pouvons noter que `Québec` et `Quebec` sont présent; on 
+peut associer le second à l'anglais ou à une faute de frappe.
+Nous voyons aussi que, parmis les 20 mots-clés les plus populaires se trouvent 
+des mot-clés décrivant les disciplines les plus populaires. Il y a donc une grande 
+tendance à inscrire le nom de la discipline de publication dans les mots-clés.
+Il y a un total de 155,489 mots-clés différents utilisés au travers de Papyrus. 
+
+Au total, 120,936 mots-clés ne sont présents qu'une seule fois.
+
+
 #### `doc_language`
 La Figure suivante montre la distribution des 2,024 champs manquants de 
 l'attribut`doc_language` selon les années.
@@ -455,7 +491,6 @@ anglais ne fait qu'augmenter au fil des années.
 
 
 #### `doc_type`, `discipline`, `degree_grantor` et `degree_name`
-L'attribut `doc_type`
 
 Le tableau suivant montre la distibution de ces attributs manquants selon les années.
 Les éléments `discipline` et `degree_name` manquants proviennent de deux documents; 
@@ -469,3 +504,120 @@ soumises après 2009.
 | 1994        | 0        | 1          | 1              | 1           |
 | 2010        | 0        | 0          | 1              | 0           |
 | 2025        | 1        | 0          | 7              | 0           |
+
+
+Le tableau suivant montre la distribution des 20 disciplines les plus 
+populaires au travers du corpus:
+
+| Discipline | Nombre d'occurrences |
+| -----------| -----|
+|Sciences biomédicales | 1816 |
+|Informatique | 1593 |
+|Psychologie | 1450 |
+|Chimie | 1110 |
+|Anthropologie | 1088 |
+|Philosophie | 968 |
+|Physique | 950 |
+|Histoire | 947 |
+|Criminologie | 831 |
+|Sociologie | 795 |
+|Science politique | 788 |
+|Sciences biologiques | 735 |
+|Biologie moléculaire | 726 |
+|Droit | 701 |
+|Biochimie | 694 |
+|Sciences vétérinaires | 684 |
+|Microbiologie et immunologie | 676 |
+|Sciences infirmières | 675 |
+|Littératures de langue française | 644 |
+|Relations industrielles | 555 |
+| -----------| -----|
+
+Ce sont les sciences biomédicales qui dominent, suivies de l'informatique et de la psychologie.
+Il y a un total de 174 disciplines dans le corpus complet. Le tableau suivant montre
+les 20 disciplines les moins publiées:
+
+| Discipline | Nombre d'occurrences |
+| -----------| -----|
+|Chimie médicinale | 1 |
+|Médecine sociale et préventive | 1 |
+|Activité physique | 1 |
+|Sciences biomédicales (Nutrition) | 1 |
+|Médecine et chirurgie expérimentales | 1 |
+|Pathologie | 1 |
+|Sciences de l'éducation (Andragogie) | 1 |
+|Aménagement (Histoire et théories) | 1 |
+|Sciences vétérinaires (option sciences cliniques) | 1 |
+|Sciences de la vision (Option sciences fondamentales et appliquées) | 1 |
+|Études néo-helléniques | 1 |
+|Psychologie-recherche et intervention (Psychologie du travail et des organisations) | 1 |
+|Sciences pharmaceutiques (Chimie médicinale) | 1 |
+|Sciences biomédicales (Bioéthique) | 1 |
+|Sciences de l'éducation (Éducation comparée et fondements de l'éducation) | 1 |
+|Sciences humaines appliquées (Option bioéthique) | 1 |
+|Psychologie-recherche et intervention (Psychodynamique) | 1 |
+|Sciences biomédicales (Immunologie) | 1 |
+|Médecine du travail et d'hygiène du milieu | 1 |
+|Littérature (Humanités numériques) | 2 |
+| -----------| -----|
+
+Parmis les 33,879 documents du corpus, 33,876 sont des thèses ou mémoires,
+2 sont des travaux étudiants de niveau maitrîse ou doctorat, 1 est un film
+ou vidéo de niveau maitrise. Le document manquant ne possède par de valeur 
+dans ce champs.
+
+Le tableau suivant montre la distribution des types non vides de diplôme octroyés :
+
+| Diplôme | Nombre d'occurrences |
+|--------|------|
+|M. Sc. | 15850 |
+|Ph. D. | 10430 |
+|M.A. | 5435 |
+|LL. M. | 806 |
+|M. Sc. A. | 265 |
+|M. Ps. | 253 |
+|LL. D. | 202 |
+|M.O.A. | 183 |
+|M. Mus. | 146 |
+|M. Urb. | 133 |
+|D. Mus. | 62 |
+|M.S.I. | 38 |
+|D. Ps. | 34 |
+|L. Th. | 10 |
+|M.B.S.I. | 8 |
+|D. Th. & Ph. D. | 5 |
+|D. Th. | 4 |
+|D. Psy. | 3 |
+|M. Th. | 3 |
+|M. Sc | 2 |
+|Ll. M. | 1 |
+|M. Trad. | 1 |
+|M.A.P. | 1 |
+|M. Ps | 1 |
+|M.S. | 1 |
+|M.A | 1 |
+|--------|------|
+
+Ces dipômes se résument dans ces deux niveaux universitaires:
+
+| Niveau universitaire | Nombre d'occurrences |
+|-----------------|------------|
+|Maîtrise / Master's | 23136 |
+|Doctorat / Doctoral | 10744 |
+|-----------------|------------|
+
+On retrouve donc deux fois plus de documents liés à des maîtrises qu'à des doctorats.
+
+Le tableau suivant résume la distribution des valeurs non vides de l'attribut
+`degree_grantor`:
+
+| Émetteur du diplôme | Nombre d'occurences |
+|-----|-----|
+Université de Montréal |          33870 |
+M.S. U. of California, Davis       | 1 |
+|-----|-----|
+
+Le diplôme émit par UC Davis provient d'un 
+[mémoire de maîtrise en nutrition](https://umontreal.scholaris.ca/items/f1238b56-ff73-4f10-aaa1-76fef83dbcd2)
+publié en 1985 par une étudiante de l'UdeM déposant un mémoire à l'Université 
+Davis de Californie.
