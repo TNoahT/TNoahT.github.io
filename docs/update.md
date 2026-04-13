@@ -160,12 +160,15 @@ non-supervisé des mots-clés du corpus Papyrus.
 Étant donnée que plusieurs langues différentes sont utilisées
 pour les mots-clés, nous devons utiliser un système multilingue 
 de vecteurs sémantiques (*embedder*). Nous avons choisi le
-même [modèle](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) que celui utilisé pour les résumés. Ce modèle permet de projecter tous les mots-clés 
+même [modèle](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2) que celui 
+utilisé pour les résumés. Ce modèle permet de projecter tous les mots-clés 
 du jeu de données dans un espace commun à 768 dimensions.
 
 Ensuite, afin de pouvoir regrouper les données, nous appliquons
-une méthode de réduction de dimensionnalité à ces vecteurs sémantiques. Afin de passer de 768 dimensions à 50, nous
-utilisons *[Uniform Manifold Approximation and Projection](https://umap-learn.readthedocs.io/en/latest/index.html)* 
+une méthode de réduction de dimensionnalité à ces vecteurs sémantiques. 
+Afin de passer de 768 dimensions à 50, nous
+utilisons 
+*[Uniform Manifold Approximation and Projection](https://umap-learn.readthedocs.io/en/latest/index.html)* 
 (UMAP).
 
 La méthode choisie pour faire le 
@@ -181,7 +184,7 @@ que les dix mots clés les plus populaires pour ces groupes. Le tableau
 suivant présente les dix plus gros regroupements en terme de nombre de
 mots-clés :
 
-| Numéro du regroupement | Taille | Mots-clés les plus populaires |
+| Numéro du regroupement | Taille (nombre d'occurrence de ces mots-clés) | Mots-clés les plus populaires |
 |-------|--------|----|
 | 2061  | 1889  |  Grossesse, Douleur, Altérité, Locomotion, Régulation, Jeunes, Bien-être, Soins intensifs, Rein, sommeil |
 | 270  | 833  |  Nutrition, Alimentation, nutrition, Diet, Food insecurity, Insécurité alimentaire, Sécurité alimentaire, Food, alimentation, Environnement alimentaire |
@@ -193,6 +196,107 @@ mots-clés :
 | 1630  | 405  |  Travail, Mémoire de travail, Emploi, Employment, Environnement de travail, Work, travail, work, Conditions de travail, Marché du travail |
 | 1457  | 383  |  Cytokines, Cytokine, cytokines, Cytotoxicité, Cytosquelette, Cytométrie en flux, Flow cytometry, Cytokinesis, Cytotoxicity, Cyclopropane |
 | 216  | 382  |  Sciences infirmières, Infirmières, Nurses, Nursing, Soins infirmiers, Infirmière, Formation infirmière, Nursing education, infirmières, nurses |
+
+Nous y voyons une grande diversité de sujets, avec des regroupements reliés à 
+la santé, à l'environnement, au cinéma, et à la parentalité. Les nombreux 
+regroupements reliés à la santé sont cohérent avec le fait que les sciences 
+biomédicales sont la discipline la plus publiée dans Papyrus.
+
+En informatique, les premiers regroupements apparaissent à la 33e place avec
+224 mots-clés entourant le traitement d'images. L'informatique quantique prend 
+la 42e place avec 202 mots-clés. Dans un contexte de recherche où tout semble
+converger vers l'intelligence artificielle, les groupes pour les réseaux et GAN 
+(191 mots clés) et l'apprentissage automatique (48 mots-clés) se trouvent seulement 
+à la 47e et 48e place respectivement. Cependant, ces regroupement concernent 
+l'ensemble des publications dans Papyrus; l'apprentissage automatique n'est 
+devenu très populaire que dans les dernières années. 
+
+Afin d'explorer un potentiel changement au niveau des sujets de recherche au travers 
+des années, la tableau suivant montre les dix plus gros regroupements pour 
+les publications avant 2016. Le groupement contenant "Apprentissage automatique" se retrouve
+à la 35e place (146 mots-clés), tandis que le traitement d'images est 53e (119 mots-clés).
+
+| Numéro du regroupement | Taille (nombre d'occurrence de ces mots-clés) | Mots-clés les plus populaires |
+|-------|--------|----|
+| Cluster 1251 | (size=1888) | Apprentissage, Grossesse, Locomotion, Douleur, Jeunes, Régulation, Modèle, Rein, Soins intensifs, Étoiles |
+| Cluster 334 | (size=892) | Québec, Canada, Quebec, Montréal, Montreal, Littérature québécoise, Quebec literature, Poésie québécoise, Canada (Charte canadienne des droits et libertés), Ontario |
+| Cluster 1257 | (size=494) | Rousseau, Jean-Jacques, 1712-1778, Georges Bataille, Grandbois, Alain, 1900-1975, Michel Foucault, Jacques Derrida, Jean-Jacques Rousseau, Derrida, Jacques, Sartre, Jean-Paul, 1905-1980, Bataille, Georges, 1897-1962, Rabelais, François, ca. 1495-1553 |
+| Cluster 960 | (size=459) | Aménagement, Réadaptation, Rehabilitation, Récidive, Réécriture, Réparation, Recidivism, Rewriting, Reperfusion, Repliement |
+| Cluster 160 | (size=455) | Génétique, Expression génique, Genetics, Thérapie génique, Génomique, Genetic, Génétique des populations, Régulation génique, Gene expression, génétique |
+| Cluster 1242 | (size=378) | Nietzsche, Max Weber, Nietzsche, Friedrich Wilhelm, 1844-1900, Husserl, Charles Taylor, Beckett, Samuel, 1906-1989, Hegel, Georg Wilhelm Friedrich, 1770-1831, Samuel Beckett, David Hume, Theodor W. Adorno |
+| Cluster 258 | (size=360) | Sciences biomédicales, Biochimie, Sciences biologiques, Biomécanique, Sciences biomédicales (Réadaptation), Bioéthique, Biofilm, Bioethics, Biomechanics, Biomarqueurs |
+| Cluster 245 | (size=288) | Cinéma, Cinema, Cinématique, cinéma, Film, film, cinema, Films, Cinéma expérimental, Films minces |
+| Cluster 721 | (size=280) | Représentations sociales, Social representations, Socialisation, Social, Intégration sociale, Rapports sociaux, Sociabilité, Sociability, Interactions sociales, Liens sociaux |
+| Cluster 629 | (size=274) | Environnement, Environment, Écologie, environnement, environment, Facteurs environnementaux, Approche écologique, Écoconception, Ecology, Évaluation environnementale |
+
+Le tableau suivant montre les regroupements pour les publications depuis 2016. Nous voyons l'arrivée de
+la bio-informatique dans les dix plus grands groupes. Le traitement d'image est 52e (135 mots-clés), et les 
+réseaux et GAN sont 55e (131 mots-clés). L'apprentissage automatique prend la 60e place (126 mots-clés).
+
+| Numéro du regroupement | Taille (nombre d'occurrence de ces mots-clés) | Mots-clés les plus populaires |
+|-------|--------|----|
+| Cluster 309 | (size=1117) | Éducation, Education, éducation, education, School, Université, University, Décrochage scolaire, École, Lecture |
+| Cluster 1277 | (size=646) | Douleur, Jeunes, sommeil, Rythme, Ucanal, Locomotion, Eau, Argent, Amitié, Dosimetry |
+| Cluster 1033 | (size=536) | Music, Musique, musique, music, Analyse musicale, Contemporary music, Orchestration, Musique mixte, Musique contemporaine, musique mixte |
+| Cluster 370 | (size=463) | Bioinformatics, Biomechanics, Bio-informatique, Biomécanique, Biomarkers, Biomarqueurs, Biomarker, Biomarqueur, biomarqueurs, Biofilm |
+| Cluster 752 | (size=434) | Mémoire de travail, Travail, Emploi, Employment, Work, Workers, Droit du travail, travail, work, Conditions de travail |
+| Cluster 119 | (size=327) | Génomique, Gene expression, Génétique, Expression génique, Genomics, génétique, Genetic, Genomic, Genetics, Génétique des populations |
+| Cluster 599 | (size=277) | Insuffisance cardiaque, Heart failure, Maladies cardiovasculaires, Cardiac surgery, Chirurgie cardiaque, Cardiovascular disease, Cardiovascular diseases, chirurgie cardiaque, Heart rate variability, insuffisance cardiaque |
+| Cluster 509 | (size=256) | Transport, Transportation, transport, Trafic vésiculaire, Transit, CAR, Driving simulator, Simulateur de conduite, drive, CAR-T |
+| Cluster 1228 | (size=252) | Arabidopsis thaliana, fruits et légumes, Borrelia burgdorferi, Gesneriaceae, Fruit and vegetable, Fruits et légumes, Fruits and vegetables, Croissance des plantes, Plant growth, Listronotus oregonensis |
+| Cluster 841 | (size=249) | Sociocritique, Représentations sociales, Social representations, Sociocriticism, Socialisation, représentations sociales, Imaginaire social, Socialization, social representations, socialisation |
+
+Finalement, le tableau suivant montre les dix regroupements les plus populaires pour les 
+publications depuis 2025. 
+
+| Numéro du regroupement | Taille (nombre d'occurrence de ces mots-clés) | Mots-clés les plus populaires |
+|-------|--------|----|
+| Cluster 193 | (size=421) | Rythme, Douleur, Ucanal, GPCR, Anandamide, GWAS, Sylvicole supérieur, Unica Zürn, MPOC, Ambiance |
+| Cluster 142 | (size=187) | Maladie d’Alzheimer, Neurodevelopment, Alzheimer’s disease, Neurodéveloppement, Parkinson's disease, Blood-brain barrier, Réseaux de neurones, Neural networks, Neuroimaging, Alzheimer's disease |
+| Cluster 41 | (size=169) | Université, University, Higher education, School, Rendement scolaire, Adaptation scolaire, Politiques éducatives, Continuing education, École, Éducation |
+| Cluster 71 | (size=168) | Santé mentale, Mental health, Well-being, Schizophrénie, Schizophrenia, Dépression, Psychologie, Psychology, Symptômes dépressifs, Depression |
+| Cluster 128 | (size=142) | Microbiote, Microbiota, COVID-19 pandemic, Hepatitis C virus, Probiotic, Mycobacterium tuberculosis, Microbiote intestinal, Virulence, Staphylococcus, Campylobacter |
+| Cluster 86 | (size=137) | Création littéraire, Literary creation, Novel, Littérature contemporaine, poétique, poetics, Littérature, Literature, Revue systématique de la littérature, littérature |
+| Cluster 1 | (size=133) | Gender, Gender relations, sexual violence, queer, violence sexuelle, Rapports de genre, Études queer, Satisfaction sexuelle, Sexual satisfaction, Orientation sexuelle |
+| Cluster 189 | (size=120) | Pouvoir, Apprentissage par renforcement, Apprentissage Profond, Apprentissage actif, Othering, Soins de première ligne, Réduction des méfaits, Revue de portée, Consentement, Végétation |
+| Cluster 3 | (size=118) | Anticorps, Immunothérapie, Immunotherapy, Immunomodulation, Immunité, Immunity, Antibodies, Antibody, immunofluorescence, immunité |
+| Cluster 138 | (size=111) | Social, Sociologie, Sociology, imaginaire sociotechnique, Mouvements sociaux, Participation sociale, sociotechnical imaginaries, social learning, Échange social, Emotion socialization |
+
+Nous voyons que, pour les dix plus grands regroupements, les sujets restent très variés 
+au travers des années. Depuis 2025, la bio-informatique prend la 14e place avec 94 mots-clés.
+Le groupement contenant les mots-clés "Model-driven engineering" et "Apprentissage mutlimodal" 
+se trouve à la 27e place, ex aequo avec le groupement contenant "Grands modèles de langue", tous deux avec 74 
+mots-clés. Le groupement contenant "apprentissage automatique" se trouve à la 197e place (15 mots-clés).
+
+Au fils des années, nous voyons une montées des termes entourant l'apprentissage automatique,
+mais ceci n'est pas aussi important que d'autres regroupement. Évidemment, l'intelligence artificielle
+prend de multiples formes, et peut s'imisser dans plusieurs domaines sans être 
+explicité par cette analyse. De plus, ceci dépend purement de l'encodeur transformant les mots-clés 
+en vecteurs. 
+
+Afin de balancer ces résultats dépendant d'un modèle, nous regardons aussi les mots-clés les
+plus utilisés pour ces mêmes périodes.
+
+| <2016 | Occurrences | >=2016 | Occurrences | >= 2025 | Occurrences |
+|------|-------|:---------|-------|-------|-------|
+| Psychologie | 563 | Québec | 215 | Québec | 29 |
+| Anthropologie | 429 | Canada | 156 | Canada | 20
+| Québec | 318 | Machine learning | 118 | Machine learning | 18 |
+| Histoire | 311 | Philosophie | 108 | Apprentissage automatique | 15 |
+| Informatique | 276 | Philosophy | 108 | Inflammation | 14 |
+| Philosophie | 262 | Inflamation | 106 | Cognition | 12 |
+| Chimie | 260 | Montréal | 104 | Intelligence artificielle | 12 |
+| Sociologie | 236 | Apprentissage profond | 100 | Apprentissage profond | 12 |
+| Canada | 219 | Apprentissage automatique | 96 | Women | 12 |
+| Droit | 214 | Deep learning | 88 | Santé mentale | 12 |
+
+Ces résultats montre que, malgré que la recherche continue d'être diversifiée, 
+l'apprentissage automatique semble être utilisée de plus en plus dans tous les
+domaines. Il est intéressant aussi de remarquer que pour les publications depuis 2016, 
+les mots-clés "Philosophie" et "Philosophy" sont présents exactement le même nombre de 
+fois (ce qui n'était pas le cas avant 2016). En général, les mots-clés anglais
+prennent de plus en plus de place depuis 2016, montrant une certaine 
+anglicisation de la recherche.
 
 
 

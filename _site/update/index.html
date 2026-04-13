@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"Projet Honor","headline":"Rapport d’avancement","url":"http://localhost:4000/update/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=3bf0e34b94948a2abbc0692ea0ed12a845a84436">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ce5fc3b81e65113b17c5e70085acfe355afc742e">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -50,6 +50,8 @@
 <h1 id="rapport-davancement">Rapport d’avancement</h1>
 
 <h2 id="10-avril-2026">10 avril 2026</h2>
+
+<h3 id="comparaison-du-sens-des-traductions">Comparaison du sens des traductions</h3>
 <p>Afin d’avoir une idée de la qualité des traductions, nous utilisons un <a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">système 
 multilingue de vecteur sémantique pour les phrases</a>
 (<em>multilingual sentence embedder</em>). Ce modèle permet de transformer des phrases 
@@ -237,6 +239,326 @@ cette différence sémantique importante entre ces deux résumés.</p>
 
 <p>Nous voyons que ces deux résumés sont très similaires, expliquant leur score 
 commun de 0.990332.</p>
+
+<h3 id="regroupement-de-données-clustering-pour-les-mot-clés">Regroupement de données (<em>clustering</em>) pour les mot-clés</h3>
+
+<p>Afin de pouvoir comprendre l’étendue de la recherche effectuée
+à l’Université de Montréal, nous avons effectué un regroupement
+non-supervisé des mots-clés du corpus Papyrus.</p>
+
+<p>Étant donnée que plusieurs langues différentes sont utilisées
+pour les mots-clés, nous devons utiliser un système multilingue 
+de vecteurs sémantiques (<em>embedder</em>). Nous avons choisi le
+même <a href="https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2">modèle</a> que celui 
+utilisé pour les résumés. Ce modèle permet de projecter tous les mots-clés 
+du jeu de données dans un espace commun à 768 dimensions.</p>
+
+<p>Ensuite, afin de pouvoir regrouper les données, nous appliquons
+une méthode de réduction de dimensionnalité à ces vecteurs sémantiques. 
+Afin de passer de 768 dimensions à 50, nous
+utilisons 
+<em><a href="https://umap-learn.readthedocs.io/en/latest/index.html">Uniform Manifold Approximation and Projection</a></em> 
+(UMAP).</p>
+
+<p>La méthode choisie pour faire le 
+regroupement des données, HDBSCAN, est optimal pour des données
+d’entrée de <a href="(https://hdbscan.readthedocs.io/en/latest/faq.html)">50 à 100 dimensions</a>; au-delà de cela, les 
+performances diminuent considérablement, d’où cette diminution 
+de dimentionnalité préalable. Afin d’avoir des regroupement 
+suffisamment importants, nous introduisons une taille minimale 
+de 15 mots-clés par groupe.</p>
+
+<p>Enfin, nous pouvons explorer les plus gros regroupements, ainsi
+que les dix mots clés les plus populaires pour ces groupes. Le tableau 
+suivant présente les dix plus gros regroupements en terme de nombre de
+mots-clés :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numéro du regroupement</th>
+      <th>Taille (nombre d’occurrence de ces mots-clés)</th>
+      <th>Mots-clés les plus populaires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2061</td>
+      <td>1889</td>
+      <td>Grossesse, Douleur, Altérité, Locomotion, Régulation, Jeunes, Bien-être, Soins intensifs, Rein, sommeil</td>
+    </tr>
+    <tr>
+      <td>270</td>
+      <td>833</td>
+      <td>Nutrition, Alimentation, nutrition, Diet, Food insecurity, Insécurité alimentaire, Sécurité alimentaire, Food, alimentation, Environnement alimentaire</td>
+    </tr>
+    <tr>
+      <td>2077</td>
+      <td>712</td>
+      <td>Jacques Derrida, Hubert Aquin, Rousseau, Jean-Jacques, 1712-1778, Georges Bataille, Jean-Jacques Rousseau, Rousseau, Georges Didi-Huberman, Grandbois, Alain, 1900-1975, Pierre Perrault, Derrida, Jacques</td>
+    </tr>
+    <tr>
+      <td>361</td>
+      <td>678</td>
+      <td>Génétique, Expression génique, Génomique, Gene expression, Genetics, Genetic, Thérapie génique, génétique, Génétique des populations, Genomics</td>
+    </tr>
+    <tr>
+      <td>1749</td>
+      <td>626</td>
+      <td>Environnement, Environment, environnement, environment, Écologie, Ecology, écologie, ecology, Facteurs environnementaux, Environnement bâti</td>
+    </tr>
+    <tr>
+      <td>1082</td>
+      <td>425</td>
+      <td>Cinéma, Cinema, cinéma, Cinématique, cinema, Film, film, cinématique, Cinéma expérimental, Experimental cinema</td>
+    </tr>
+    <tr>
+      <td>429</td>
+      <td>417</td>
+      <td>Parents, Pratiques parentales, Parent, pratiques parentales, Parentalité, Parenting, Parenté, Parental involvement, Implication parentale, parents</td>
+    </tr>
+    <tr>
+      <td>1630</td>
+      <td>405</td>
+      <td>Travail, Mémoire de travail, Emploi, Employment, Environnement de travail, Work, travail, work, Conditions de travail, Marché du travail</td>
+    </tr>
+    <tr>
+      <td>1457</td>
+      <td>383</td>
+      <td>Cytokines, Cytokine, cytokines, Cytotoxicité, Cytosquelette, Cytométrie en flux, Flow cytometry, Cytokinesis, Cytotoxicity, Cyclopropane</td>
+    </tr>
+    <tr>
+      <td>216</td>
+      <td>382</td>
+      <td>Sciences infirmières, Infirmières, Nurses, Nursing, Soins infirmiers, Infirmière, Formation infirmière, Nursing education, infirmières, nurses</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nous y voyons une grande diversité de sujets, avec des regroupements reliés à 
+la santé, à l’environnement, au cinéma, et à la parentalité. Les nombreux 
+regroupements reliés à la santé sont cohérent avec le fait que les sciences 
+biomédicales sont la discipline la plus publiée dans Papyrus.</p>
+
+<p>En informatique, les premiers regroupements apparaissent à la 33e place avec
+224 mots-clés entourant le traitement d’images. L’informatique quantique prend 
+la 42e place avec 202 mots-clés. Dans un contexte de recherche où tout semble
+converger vers l’intelligence artificielle, les groupes pour les réseaux et GAN 
+(191 mots clés) et l’apprentissage automatique (48 mots-clés) se trouvent seulement 
+à la 47e et 48e place respectivement. Cependant, ces regroupement concernent 
+l’ensemble des publications dans Papyrus; l’apprentissage automatique n’est 
+devenu très populaire que dans les dernières années.</p>
+
+<p>Afin d’explorer un potentiel changement au niveau des sujets de recherche au travers 
+des années, la tableau suivant montre les dix plus gros regroupements pour 
+les publications avant 2016. Le groupement contenant “Apprentissage automatique” se retrouve
+à la 35e place (146 mots-clés), tandis que le traitement d’images est 53e (119 mots-clés).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numéro du regroupement</th>
+      <th>Taille (nombre d’occurrence de ces mots-clés)</th>
+      <th>Mots-clés les plus populaires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cluster 1251</td>
+      <td>(size=1888)</td>
+      <td>Apprentissage, Grossesse, Locomotion, Douleur, Jeunes, Régulation, Modèle, Rein, Soins intensifs, Étoiles</td>
+    </tr>
+    <tr>
+      <td>Cluster 334</td>
+      <td>(size=892)</td>
+      <td>Québec, Canada, Quebec, Montréal, Montreal, Littérature québécoise, Quebec literature, Poésie québécoise, Canada (Charte canadienne des droits et libertés), Ontario</td>
+    </tr>
+    <tr>
+      <td>Cluster 1257</td>
+      <td>(size=494)</td>
+      <td>Rousseau, Jean-Jacques, 1712-1778, Georges Bataille, Grandbois, Alain, 1900-1975, Michel Foucault, Jacques Derrida, Jean-Jacques Rousseau, Derrida, Jacques, Sartre, Jean-Paul, 1905-1980, Bataille, Georges, 1897-1962, Rabelais, François, ca. 1495-1553</td>
+    </tr>
+    <tr>
+      <td>Cluster 960</td>
+      <td>(size=459)</td>
+      <td>Aménagement, Réadaptation, Rehabilitation, Récidive, Réécriture, Réparation, Recidivism, Rewriting, Reperfusion, Repliement</td>
+    </tr>
+    <tr>
+      <td>Cluster 160</td>
+      <td>(size=455)</td>
+      <td>Génétique, Expression génique, Genetics, Thérapie génique, Génomique, Genetic, Génétique des populations, Régulation génique, Gene expression, génétique</td>
+    </tr>
+    <tr>
+      <td>Cluster 1242</td>
+      <td>(size=378)</td>
+      <td>Nietzsche, Max Weber, Nietzsche, Friedrich Wilhelm, 1844-1900, Husserl, Charles Taylor, Beckett, Samuel, 1906-1989, Hegel, Georg Wilhelm Friedrich, 1770-1831, Samuel Beckett, David Hume, Theodor W. Adorno</td>
+    </tr>
+    <tr>
+      <td>Cluster 258</td>
+      <td>(size=360)</td>
+      <td>Sciences biomédicales, Biochimie, Sciences biologiques, Biomécanique, Sciences biomédicales (Réadaptation), Bioéthique, Biofilm, Bioethics, Biomechanics, Biomarqueurs</td>
+    </tr>
+    <tr>
+      <td>Cluster 245</td>
+      <td>(size=288)</td>
+      <td>Cinéma, Cinema, Cinématique, cinéma, Film, film, cinema, Films, Cinéma expérimental, Films minces</td>
+    </tr>
+    <tr>
+      <td>Cluster 721</td>
+      <td>(size=280)</td>
+      <td>Représentations sociales, Social representations, Socialisation, Social, Intégration sociale, Rapports sociaux, Sociabilité, Sociability, Interactions sociales, Liens sociaux</td>
+    </tr>
+    <tr>
+      <td>Cluster 629</td>
+      <td>(size=274)</td>
+      <td>Environnement, Environment, Écologie, environnement, environment, Facteurs environnementaux, Approche écologique, Écoconception, Ecology, Évaluation environnementale</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Le tableau suivant montre les regroupements pour les publications depuis 2016. Nous voyons l’arrivée de
+la bio-informatique dans les dix plus grands groupes. Le traitement d’image est 52e (135 mots-clés), et les 
+réseaux et GAN sont 55e (131 mots-clés). L’apprentissage automatique prend la 60e place (126 mots-clés).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numéro du regroupement</th>
+      <th>Taille (nombre d’occurrence de ces mots-clés)</th>
+      <th>Mots-clés les plus populaires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cluster 309</td>
+      <td>(size=1117)</td>
+      <td>Éducation, Education, éducation, education, School, Université, University, Décrochage scolaire, École, Lecture</td>
+    </tr>
+    <tr>
+      <td>Cluster 1277</td>
+      <td>(size=646)</td>
+      <td>Douleur, Jeunes, sommeil, Rythme, Ucanal, Locomotion, Eau, Argent, Amitié, Dosimetry</td>
+    </tr>
+    <tr>
+      <td>Cluster 1033</td>
+      <td>(size=536)</td>
+      <td>Music, Musique, musique, music, Analyse musicale, Contemporary music, Orchestration, Musique mixte, Musique contemporaine, musique mixte</td>
+    </tr>
+    <tr>
+      <td>Cluster 370</td>
+      <td>(size=463)</td>
+      <td>Bioinformatics, Biomechanics, Bio-informatique, Biomécanique, Biomarkers, Biomarqueurs, Biomarker, Biomarqueur, biomarqueurs, Biofilm</td>
+    </tr>
+    <tr>
+      <td>Cluster 752</td>
+      <td>(size=434)</td>
+      <td>Mémoire de travail, Travail, Emploi, Employment, Work, Workers, Droit du travail, travail, work, Conditions de travail</td>
+    </tr>
+    <tr>
+      <td>Cluster 119</td>
+      <td>(size=327)</td>
+      <td>Génomique, Gene expression, Génétique, Expression génique, Genomics, génétique, Genetic, Genomic, Genetics, Génétique des populations</td>
+    </tr>
+    <tr>
+      <td>Cluster 599</td>
+      <td>(size=277)</td>
+      <td>Insuffisance cardiaque, Heart failure, Maladies cardiovasculaires, Cardiac surgery, Chirurgie cardiaque, Cardiovascular disease, Cardiovascular diseases, chirurgie cardiaque, Heart rate variability, insuffisance cardiaque</td>
+    </tr>
+    <tr>
+      <td>Cluster 509</td>
+      <td>(size=256)</td>
+      <td>Transport, Transportation, transport, Trafic vésiculaire, Transit, CAR, Driving simulator, Simulateur de conduite, drive, CAR-T</td>
+    </tr>
+    <tr>
+      <td>Cluster 1228</td>
+      <td>(size=252)</td>
+      <td>Arabidopsis thaliana, fruits et légumes, Borrelia burgdorferi, Gesneriaceae, Fruit and vegetable, Fruits et légumes, Fruits and vegetables, Croissance des plantes, Plant growth, Listronotus oregonensis</td>
+    </tr>
+    <tr>
+      <td>Cluster 841</td>
+      <td>(size=249)</td>
+      <td>Sociocritique, Représentations sociales, Social representations, Sociocriticism, Socialisation, représentations sociales, Imaginaire social, Socialization, social representations, socialisation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Finalement, le tableau suivant montre les dix regroupements les plus populaires pour les 
+publications depuis 2025.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numéro du regroupement</th>
+      <th>Taille (nombre d’occurrence de ces mots-clés)</th>
+      <th>Mots-clés les plus populaires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cluster 193</td>
+      <td>(size=421)</td>
+      <td>Rythme, Douleur, Ucanal, GPCR, Anandamide, GWAS, Sylvicole supérieur, Unica Zürn, MPOC, Ambiance</td>
+    </tr>
+    <tr>
+      <td>Cluster 142</td>
+      <td>(size=187)</td>
+      <td>Maladie d’Alzheimer, Neurodevelopment, Alzheimer’s disease, Neurodéveloppement, Parkinson’s disease, Blood-brain barrier, Réseaux de neurones, Neural networks, Neuroimaging, Alzheimer’s disease</td>
+    </tr>
+    <tr>
+      <td>Cluster 41</td>
+      <td>(size=169)</td>
+      <td>Université, University, Higher education, School, Rendement scolaire, Adaptation scolaire, Politiques éducatives, Continuing education, École, Éducation</td>
+    </tr>
+    <tr>
+      <td>Cluster 71</td>
+      <td>(size=168)</td>
+      <td>Santé mentale, Mental health, Well-being, Schizophrénie, Schizophrenia, Dépression, Psychologie, Psychology, Symptômes dépressifs, Depression</td>
+    </tr>
+    <tr>
+      <td>Cluster 128</td>
+      <td>(size=142)</td>
+      <td>Microbiote, Microbiota, COVID-19 pandemic, Hepatitis C virus, Probiotic, Mycobacterium tuberculosis, Microbiote intestinal, Virulence, Staphylococcus, Campylobacter</td>
+    </tr>
+    <tr>
+      <td>Cluster 86</td>
+      <td>(size=137)</td>
+      <td>Création littéraire, Literary creation, Novel, Littérature contemporaine, poétique, poetics, Littérature, Literature, Revue systématique de la littérature, littérature</td>
+    </tr>
+    <tr>
+      <td>Cluster 1</td>
+      <td>(size=133)</td>
+      <td>Gender, Gender relations, sexual violence, queer, violence sexuelle, Rapports de genre, Études queer, Satisfaction sexuelle, Sexual satisfaction, Orientation sexuelle</td>
+    </tr>
+    <tr>
+      <td>Cluster 189</td>
+      <td>(size=120)</td>
+      <td>Pouvoir, Apprentissage par renforcement, Apprentissage Profond, Apprentissage actif, Othering, Soins de première ligne, Réduction des méfaits, Revue de portée, Consentement, Végétation</td>
+    </tr>
+    <tr>
+      <td>Cluster 3</td>
+      <td>(size=118)</td>
+      <td>Anticorps, Immunothérapie, Immunotherapy, Immunomodulation, Immunité, Immunity, Antibodies, Antibody, immunofluorescence, immunité</td>
+    </tr>
+    <tr>
+      <td>Cluster 138</td>
+      <td>(size=111)</td>
+      <td>Social, Sociologie, Sociology, imaginaire sociotechnique, Mouvements sociaux, Participation sociale, sociotechnical imaginaries, social learning, Échange social, Emotion socialization</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nous voyons que, pour les dix plus grands regroupements, les sujets restent très variés 
+au travers des années. Depuis 2025, la bio-informatique prend la 14e place avec 94 mots-clés.
+Le groupement contenant les mots-clés “Model-driven engineering” et “Apprentissage mutlimodal” 
+se trouve à la 27e place, ex aequo avec le groupement contenant “Grands modèles de langue”, tous deux avec 74 
+mots-clés. Le groupement contenant “apprentissage automatique” se trouve à la 197e place (15 mots-clés).</p>
+
+<p>Au fils des années, nous voyons une montées des termes entourant l’apprentissage automatique,
+mais ceci n’est pas aussi important que d’autres regroupement. Évidemment, l’intelligence artificielle
+prend de multiples formes, et peut s’imisser dans plusieurs domaines sans être 
+explicité par cette analyse. De plus, ceci dépend purement de l’encodeur transformant les mots-clés 
+en vecteurs. Cependant, ces résultats montrent que la recherche reste variée, et ne semble pas
+converger vers un seul domaine de recherche.</p>
 
 <h2 id="25-mars-2026---analyse-des-données">25 mars 2026 - Analyse des données</h2>
 <p>Un total de 33,880 documents furent extraits le 14 février 2026.</p>

@@ -456,6 +456,7 @@ Il y a un total de 155,489 mots-clés différents utilisés au travers de Papyru
 Au total, 120,936 mots-clés ne sont présents qu'une seule fois.
 
 
+
 #### `doc_language`
 La Figure suivante montre la distribution des 2,024 champs manquants de 
 l'attribut`doc_language` selon les années.
