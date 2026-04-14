@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"Projet Honor","headline":"Exploration des données","url":"http://localhost:4000/data_exploration/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=ce5fc3b81e65113b17c5e70085acfe355afc742e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=761ad7bda8b215f4f1b5a6bb328d4447cd8285ff">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -879,6 +879,174 @@ tendance à inscrire le nom de la discipline de publication dans les mots-clés.
 Il y a un total de 155,489 mots-clés différents utilisés au travers de Papyrus.</p>
 
 <p>Au total, 120,936 mots-clés ne sont présents qu’une seule fois.</p>
+
+<p>Nous pouvons aussi visualiser les mots-clés les plus populaires pour une année 
+précise. La Figure suivante montre les 10 mots-clés les plus utilisés en 
+informatique en 2012.</p>
+
+<p align="center">
+  <img src="/assets/images/top_10_kw_info_2012.png" style="width:60%;" />
+</p>
+
+<p>La Figure suivante montre les 10 mots-clés les plus populaires en informatique 
+en 2025. Nous</p>
+<p align="center">
+  <img src="/assets/images/top_10_kw_info_2025.png" style="width:60%;" />
+</p>
+
+<p>En comparant entre 2012 et 2025, nous voyons deux choses principales. 
+La première est que l’apprentissage automatique, qui n’occupait que quelques 
+places dans le top 10 de 2012, est rendu le sujet exclusif en 2025. La
+deuxième chose est que les mots-clés principaux sont beaucoup plus utilisés 
+en 2025. En effet, 399 mots-clés furent utilisés en informatique en 2012 pour 35 
+documents (11.4 mots-clés par documents en moyenne), comparé à 822 mot-clés pour 67 
+documents en 2025 (12.3 mots-clés par documents en moyenne); la proportion de 
+mots-clés par documents reste similaire.</p>
+
+<p>Nous pouvons aussi regarder si les mots-clés sont présents dans les résumés d’un
+document. Pour ce faire, nous regroupons les données selon les disciplines,
+et nous calculons le nombre moyen de résumés, le nombre moyen de mots-clés par documents,
+le nombre moyen de mots-clés présents dans les résumés, et enfin le taux moyen 
+d’inclusion des mots-clés. Le tableau suivant présente ces résultats pour les 10
+plus hauts taux, peu importe l’année de publication :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discipline</th>
+      <th>Nombre de documents</th>
+      <th>Nombre moyen de résumés</th>
+      <th>Nombre moyen de mots-clés</th>
+      <th>Nombre moyen de mots-clés inclus</th>
+      <th>Taux moyen d’inclusion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pharmacie</td>
+      <td>2</td>
+      <td>1.500</td>
+      <td>12.000</td>
+      <td>8.500</td>
+      <td>0.750</td>
+    </tr>
+    <tr>
+      <td>Littérature (Littérature et cinéma)</td>
+      <td>8</td>
+      <td>2.000</td>
+      <td>14.250</td>
+      <td>9.875</td>
+      <td>0.704</td>
+    </tr>
+    <tr>
+      <td>Psychologie - recherche et intervention</td>
+      <td>423</td>
+      <td>2.000</td>
+      <td>14.369</td>
+      <td>9.612</td>
+      <td>0.674</td>
+    </tr>
+    <tr>
+      <td>Sciences de l’orthophonie et de l’audiologie</td>
+      <td>17</td>
+      <td>1.941</td>
+      <td>13.824</td>
+      <td>9.118</td>
+      <td>0.672</td>
+    </tr>
+    <tr>
+      <td>Neurosciences</td>
+      <td>212</td>
+      <td>2.005</td>
+      <td>12.547</td>
+      <td>8.137</td>
+      <td>0.663</td>
+    </tr>
+    <tr>
+      <td>Médecine dentaire (Dentisterie pédiatrique)</td>
+      <td>17</td>
+      <td>2.000</td>
+      <td>9.882</td>
+      <td>6.471</td>
+      <td>0.662</td>
+    </tr>
+    <tr>
+      <td>Ph. D. Individualisé</td>
+      <td>10</td>
+      <td>2.000</td>
+      <td>14.500</td>
+      <td>8.900</td>
+      <td>0.656</td>
+    </tr>
+    <tr>
+      <td>Sciences psychiatriques et addictologie</td>
+      <td>17</td>
+      <td>2.000</td>
+      <td>13.647</td>
+      <td>9.059</td>
+      <td>0.651</td>
+    </tr>
+    <tr>
+      <td>Épidémiologie</td>
+      <td>68</td>
+      <td>2.000</td>
+      <td>12.088</td>
+      <td>7.456</td>
+      <td>0.632</td>
+    </tr>
+    <tr>
+      <td>Virologie et immunologie</td>
+      <td>39</td>
+      <td>1.846</td>
+      <td>12.128</td>
+      <td>7.487</td>
+      <td>0.617</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nous voyons que les domaines présents dans ce top 10 ont généralement peu de documents publiés;
+Psychologie et Neurosciences font exceptions. Les résultats des disciplines avec peu de documents doivent 
+donc être interprétés avec prudence. Nous voyons aussi une tendance vers un nombre moyen 
+de résumés approchant de deux par document, et un nombre moyen de mots-clés par document entre 12 et 14.</p>
+
+<p>L’informatique se trouve très bas dans le classement. Nous voyons la très grande quantité de 
+documents publiés dans cette discipline, entrainant une plus grande diversité dans les résultats.
+Le tableau suivant présente les résultats pour Informatique avant et après 2020. Nous voyons un changement 
+complet de l’utilisation des métadonnées. Les documents passent de 0.669 résumé en moyenne à 2.000, suggèrant que plusieurs documents publiés avant 2020 n’ont simplement pas de résumés.
+De plus, le nombre moyen de mots-clés par document a presque doublé. L’absence de résumés dans plusieurs 
+documents avant 2020 affecte nécessairement le taux moyen d’inclusion des mots-clés dans les résumés.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discipline</th>
+      <th>Nombre de documents</th>
+      <th>Nombre moyen de résumés</th>
+      <th>Nombre moyen de mots-clés</th>
+      <th>Nombre moyen de mots-clés inclus</th>
+      <th>Taux moyen d’inclusion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Informatique (&lt;2020)</td>
+      <td>1183</td>
+      <td>0.669</td>
+      <td>6.570</td>
+      <td>1.804</td>
+      <td>0.156</td>
+    </tr>
+    <tr>
+      <td>Informatique (&gt;=2020)</td>
+      <td>408</td>
+      <td>2.000</td>
+      <td>11.941</td>
+      <td>5.566</td>
+      <td>0.490</td>
+    </tr>
+  </tbody>
+</table>
 
 <h4 id="doc_language"><code class="language-plaintext highlighter-rouge">doc_language</code></h4>
 <p>La Figure suivante montre la distribution des 2,024 champs manquants de 

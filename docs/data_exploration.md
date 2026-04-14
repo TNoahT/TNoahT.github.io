@@ -455,6 +455,66 @@ Il y a un total de 155,489 mots-clés différents utilisés au travers de Papyru
 
 Au total, 120,936 mots-clés ne sont présents qu'une seule fois.
 
+Nous pouvons aussi visualiser les mots-clés les plus populaires pour une année 
+précise. La Figure suivante montre les 10 mots-clés les plus utilisés en 
+informatique en 2012. 
+
+<p align="center">
+  <img src="{{ '/assets/images/top_10_kw_info_2012.png' | relative_url }}" style="width:60%;">
+</p>
+
+La Figure suivante montre les 10 mots-clés les plus populaires en informatique 
+en 2025. Nous 
+<p align="center">
+  <img src="{{ '/assets/images/top_10_kw_info_2025.png' | relative_url }}" style="width:60%;">
+</p>
+
+En comparant entre 2012 et 2025, nous voyons deux choses principales. 
+La première est que l'apprentissage automatique, qui n'occupait que quelques 
+places dans le top 10 de 2012, est rendu le sujet exclusif en 2025. La
+deuxième chose est que les mots-clés principaux sont beaucoup plus utilisés 
+en 2025. En effet, 399 mots-clés furent utilisés en informatique en 2012 pour 35 
+documents (11.4 mots-clés par documents en moyenne), comparé à 822 mot-clés pour 67 
+documents en 2025 (12.3 mots-clés par documents en moyenne); la proportion de 
+mots-clés par documents reste similaire.
+
+Nous pouvons aussi regarder si les mots-clés sont présents dans les résumés d'un
+document. Pour ce faire, nous regroupons les données selon les disciplines,
+et nous calculons le nombre moyen de résumés, le nombre moyen de mots-clés par documents,
+le nombre moyen de mots-clés présents dans les résumés, et enfin le taux moyen 
+d'inclusion des mots-clés. Le tableau suivant présente ces résultats pour les 10
+plus hauts taux, peu importe l'année de publication :
+
+| Discipline | Nombre de documents | Nombre moyen de résumés | Nombre moyen de mots-clés | Nombre moyen de mots-clés inclus | Taux moyen d'inclusion |
+|---|---|---|---|---|---|
+Pharmacie | 2 | 1.500    |    12.000 |   8.500 |  0.750 |
+Littérature (Littérature et cinéma) |          8 | 2.000     |   14.250 |   9.875 |  0.704 |
+Psychologie - recherche et intervention |    423 | 2.000     |   14.369 |   9.612 |  0.674 |
+Sciences de l'orthophonie et de l'audiologie   |      17 | 1.941     |   13.824 |   9.118 |  0.672 |
+Neurosciences |        212 | 2.005    |    12.547 |   8.137 |  0.663 |
+Médecine dentaire (Dentisterie pédiatrique) | 17 | 2.000     |    9.882 |   6.471 |  0.662 |
+Ph. D. Individualisé | 10 | 2.000    |    14.500 |   8.900 |  0.656 | 
+Sciences psychiatriques et addictologie |     17 | 2.000   |     13.647 |   9.059 |  0.651 |
+Épidémiologie |                68 | 2.000     |   12.088 |   7.456 |  0.632 | 
+Virologie et immunologie     | 39 | 1.846     |   12.128 |   7.487 |  0.617 |
+
+Nous voyons que les domaines présents dans ce top 10 ont généralement peu de documents publiés;
+Psychologie et Neurosciences font exceptions. Les résultats des disciplines avec peu de documents doivent 
+donc être interprétés avec prudence. Nous voyons aussi une tendance vers un nombre moyen 
+de résumés approchant de deux par document, et un nombre moyen de mots-clés par document entre 12 et 14.
+
+L'informatique se trouve très bas dans le classement. Nous voyons la très grande quantité de 
+documents publiés dans cette discipline, entrainant une plus grande diversité dans les résultats.
+Le tableau suivant présente les résultats pour Informatique avant et après 2020. Nous voyons un changement 
+complet de l'utilisation des métadonnées. Les documents passent de 0.669 résumé en moyenne à 2.000, suggèrant que plusieurs documents publiés avant 2020 n'ont simplement pas de résumés.
+De plus, le nombre moyen de mots-clés par document a presque doublé. L'absence de résumés dans plusieurs 
+documents avant 2020 affecte nécessairement le taux moyen d'inclusion des mots-clés dans les résumés.
+
+| Discipline | Nombre de documents | Nombre moyen de résumés | Nombre moyen de mots-clés | Nombre moyen de mots-clés inclus | Taux moyen d'inclusion |
+|---|---|---|---|---|---|
+| Informatique (<2020) | 1183 | 0.669 | 6.570 | 1.804 | 0.156 | 
+| Informatique (>=2020) | 408 | 2.000 | 11.941 | 5.566 | 0.490 | 
+
 
 
 #### `doc_language`

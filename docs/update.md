@@ -299,7 +299,6 @@ prennent de plus en plus de place depuis 2016, montrant une certaine
 anglicisation de la recherche.
 
 
-
 ## 25 mars 2026 - Analyse des données
 Un total de 33,880 documents furent extraits le 14 février 2026. 
 
